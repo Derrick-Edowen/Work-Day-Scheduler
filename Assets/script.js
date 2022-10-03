@@ -5,23 +5,15 @@ function displayTime() {
 }
 setInterval(displayTime,  1000);
 
-
-
-
 $(document).ready(function () {
     $('.saveBtn').on('click', function () {
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr('id');
-
-
         localStorage.setItem(time, text);
     })
 
         function hours() {
         var timeBlock = moment().hour();
-
-
-
         $('.time-block').each(function() {
             var rowTime = parseInt($(this).attr('id').split('hour')[1]);
             if (rowTime < timeBlock) {
@@ -43,6 +35,7 @@ $(document).ready(function () {
     $('hour15 .description').val(localStorage.getItem('hour15'));
     $('hour16 .description').val(localStorage.getItem('hour16'));
     $('hour17 .description').val(localStorage.getItem('hour17'));
+
     hours()
 
  
